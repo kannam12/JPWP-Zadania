@@ -40,12 +40,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     //uzupełnij metody dodajGre(String nazwa) i dodajMojaGre(String nazwa, double cena)
     //wskazówka: początkowa liczba partii wynosi 0, a cena jednej partii jest równa cenie całej gry
+
+    //które zwracają zmienną typu boolean o wartości true, gdy dodanie do bazy danych się udało, a false, gdy nie.
     public boolean dodajMojaGre(String nazwa, double cena) {
+
+        
         return false;
     }
     public boolean dodajGre(String nazwa) {
+
+
         return false;
     }
+
 
 
 

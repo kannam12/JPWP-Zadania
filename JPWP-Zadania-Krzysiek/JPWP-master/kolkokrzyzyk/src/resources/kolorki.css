@@ -1,0 +1,17 @@
+.root{
+   -fx-background-image: url('/plansza.png');
+} 
+#myd{
+    -fx-background-color: #57C6EB;
+    -fx-border-style: solid;
+    -fx-border-width: 2px 2px 2px 2px;
+    
+}
+.line{
+    -fx-fill: #57C6EB;
+    -fx-stroke: white;
+    -fx-stroke-width: 4px;
+}
+.label{
+    -fx-stroke-width: 4px;
+}
