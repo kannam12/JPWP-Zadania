@@ -1,5 +1,5 @@
 # ZADANIA
-## Zadanie 1
+## Zadanie 1 - done
 Uzupełnij klasę DatabaseHelper w naszym kodzie o metodę dodajGre(String nazwa) i dodajMojaGre(String nazwa, double cena), które zwracają zmienną typu boolean o wartości true, gdy dodanie do bazy danych się udało, a false, gdy nie. 
 (klasa DatabaseHelper znajduje się w Aplikacjadlagracza->app->src->main->java->com->example->aplikacjadlagracza)
 ## Zadanie 2
