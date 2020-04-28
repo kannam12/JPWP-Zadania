@@ -2,9 +2,13 @@ package com.example.aplikacjadlagracza;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Build;
+
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.FragmentActivity;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -38,16 +42,67 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE2_NAME);
         onCreate(db);
     }
-    //uzupełnij metody dodajGre(String nazwa) i dodajMojaGre(String nazwa, double cena)
-    //wskazówka: początkowa liczba partii wynosi 0, a cena jednej partii jest równa cenie całej gry
+
+    //podejście pierwsze - nie do końca udane
+/*
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public boolean dodajMojaGre(String nazwa, double cena) {
-        return false;
+
+        String zapytanie_sql = "INSERT INTO " + TABLE2_NAME +"("  + COL_2 + ", "+ COL_3 + ", "+ COL_4 + ", "+ COL_5 + ", "+ COL_6 + ", "+ COL_7 +" ) VALUES("  +nazwa +", " + 0 +", "+0 +", "+0 +", "+ cena +", " + cena +")";
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            db.execSQL(zapytanie_sql);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+        return true;
     }
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public boolean dodajGre(String nazwa) {
-        return false;
+
+        String zapytanie_sql = "INSERT INTO " + TABLE2_NAME +"("  + COL_2 + ", "+ COL_3 + ", "+ COL_4 + ", "+ COL_5 + ", "+ COL_6 + ", "+ COL_7 +" ) VALUES("  +nazwa +", " + 0 +", "+0 +", "+0 + ")";
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            db.execSQL(zapytanie_sql);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+        return true;
     }
+*/
 
+    //podejście drugie - działa!
 
+    public boolean dodajMojaGre(String nazwa, double cena) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(COL_2, nazwa);
+        contentValues.put(COL_3, 0);
+        contentValues.put(COL_4, 0);
+        contentValues.put(COL_5, 0);
+        contentValues.put(COL_6, cena);
+        contentValues.put(COL_7, cena);
+
+        db.insert(TABLE2_NAME, null, contentValues);
+        return true;
+    }
+    
+    public boolean dodajGre(String nazwa) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(COL_2, nazwa);
+        contentValues.put(COL_3, 0);
+        contentValues.put(COL_4, 0);
+        contentValues.put(COL_5, 0);
+
+        db.insert(TABLE2_NAME, null, contentValues);
+        return true;
+    }
 
     public boolean dodajPartie(GraMoja graMoja, boolean wygrana){
         int liczbaPartii = graMoja.getLiczbaPartii() + 1;
