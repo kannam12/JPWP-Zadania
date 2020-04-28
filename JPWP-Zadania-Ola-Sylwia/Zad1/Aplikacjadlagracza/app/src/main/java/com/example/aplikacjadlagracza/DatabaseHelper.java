@@ -43,6 +43,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+
     //podejście pierwsze - nie do końca udane
 /*
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -103,6 +104,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert(TABLE2_NAME, null, contentValues);
         return true;
     }
+
 
     public boolean dodajPartie(GraMoja graMoja, boolean wygrana){
         int liczbaPartii = graMoja.getLiczbaPartii() + 1;
