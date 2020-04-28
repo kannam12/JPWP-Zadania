@@ -32,15 +32,14 @@ public class MainActivity extends AppCompatActivity {
         alert.setMessage("Zaloguj się:");
 
 
-
         alert.setPositiveButton("LOG IN", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
                 EditText editText1 = (EditText) findViewById(R.id.loginTxt);
-                final String login = editText1.getText().toString();
+                String login = editText1.getText().toString();
                 EditText editText2 = (EditText) findViewById(R.id.passwordTxt);
-                final String password = editText2.getText().toString();
+                String password = editText2.getText().toString();
 
                 if (login.length() > 5 && login.length() < 200 && password.length() > 5 && password.length() < 200) {
 
@@ -61,6 +60,4 @@ public class MainActivity extends AppCompatActivity {
         });
         alert.create().show();
     }
-
-
 }
