@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,9 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void showDialog(View view) {
 
-        //LayoutInflater inflater = getActivity().getLayoutInflater();
-        //View vie = inflater.inflate(R.layout.okienko, null);
+        LayoutInflater inflater = this.getLayoutInflater();
+        View vie = inflater.inflate(R.layout.okienko, null);
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setView(vie);
         alert.setTitle("LOGOWANIE");
         alert.setMessage("Zaloguj się:");
 
@@ -34,17 +36,21 @@ public class MainActivity extends AppCompatActivity {
         alert.setPositiveButton("LOG IN", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(MainActivity.this, "OK-pomyślne logowanie", Toast.LENGTH_SHORT).show();
 
-                //String login = loginTxt.getText().toString();
-                //String password = passwordTxt.getText().toString();
+                EditText editText1 = (EditText) findViewById(R.id.loginTxt);
+                final String login = editText1.getText().toString();
+                EditText editText2 = (EditText) findViewById(R.id.passwordTxt);
+                final String password = editText2.getText().toString();
 
-                //if poprawne
+                if (login.length() > 5 && login.length() < 200 && password.length() > 5 && password.length() < 200) {
 
-                Intent intent = new Intent(MainActivity.this, WitajActivity.class);
-                startActivity(intent);
+                    Toast.makeText(MainActivity.this, "OK-pomyślne logowanie", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, WitajActivity.class);
+                    startActivity(intent);
 
-                //else
+                } else {
+                    Toast.makeText(MainActivity.this, "NIE OKEJ", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         alert.setNegativeButton("Anuluj", new DialogInterface.OnClickListener() {
