@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da32d911-906b-494a-a1d2-d8c201c260ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../Zad2/Chat-master/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Zad2/Chat-master/.idea/Chat-master.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Zad2/Chat-master/.idea/libraries/gson_2_8_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Zad2/Chat-master/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Zad2/Chat-master/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Zad2/Chat-master/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Zad2/Chat-master/chat_zadanie.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Algorytmika-master.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorytmika-zadanie.iml" afterDir="false" />
-    </list>
+    <list default="true" id="da32d911-906b-494a-a1d2-d8c201c260ff" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588149827182</updated>
-      <workItem from="1588149828319" duration="5690000" />
+      <workItem from="1588149828319" duration="6282000" />
     </task>
     <servers />
   </component>
