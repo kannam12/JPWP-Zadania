@@ -18,8 +18,8 @@ async def on_message(message):
                     ## POWINIEN JUŻ LVL'UPOWAĆ
                     ## POWINNA ONA ZMIENIAĆ ZAWARTOŚĆ POLA user['level']
                     
-                    if user['xp'] > LEVELS [ user['level']]:  # nie wiem czy nie trzeba tutaj sparsować na inty, nie znam się na pytonie 
-                        user['level'] += 1;                        
+                    if user['xp'] > LEVELS [ user['level']]:
+                        user['level'] ++;                        
                     
                     
                     if level_before != user['level']:
