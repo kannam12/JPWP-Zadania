@@ -19,7 +19,7 @@ async def on_message(message):
                     ## POWINNA ONA ZMIENIAĆ ZAWARTOŚĆ POLA user['level']
                     
                     if user['xp'] > LEVELS [ user['level']]:
-                        user['level'] ++;                        
+                        user['level'] ++;   ## +=1;                     
                     
                     
                     if level_before != user['level']:
