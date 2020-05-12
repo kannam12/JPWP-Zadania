@@ -24,8 +24,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../JPWP-Zadania-Baranowski/Zad1i2" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
@@ -41,31 +41,19 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GUIStarter">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="App" />
-      <module name="Zadania" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="GUIStarter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="14" />
+      <option name="ALTERNATIVE_JRE_PATH" value="13" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="GUIStarter" />
-      <module name="Zadania" />
+      <module name="minesweeperGame" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.GUIStarter" />
-      <item itemvalue="Application.App" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GUIStarter" />
-        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -82,10 +70,7 @@
       <workItem from="1588611442815" duration="7983000" />
       <workItem from="1588622269345" duration="1254000" />
       <workItem from="1589297175913" duration="638000" />
-      <workItem from="1589298084001" duration="484000" />
-      <workItem from="1589298676028" duration="1857000" />
-      <workItem from="1589301101216" duration="51000" />
-      <workItem from="1589301202948" duration="36000" />
+      <workItem from="1589300926534" duration="174000" />
     </task>
     <servers />
   </component>
