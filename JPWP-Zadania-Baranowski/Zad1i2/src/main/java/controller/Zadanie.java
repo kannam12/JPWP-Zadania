@@ -82,6 +82,6 @@ public class Zadanie {
                 gridPane.add(toggleButton, i, j);
             }
         }
-        //tu dodaj gridPane do środka borderPane
+        borderpane.setCenter(gridPane);
     }
 }
