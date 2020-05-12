@@ -38,6 +38,8 @@ public class Board {
 
             if (!board[x][y].getStatus().equals("o")) {
                 board[x][y].setStatus("o");
+            }else{
+                i--;
             }
         }
     }
