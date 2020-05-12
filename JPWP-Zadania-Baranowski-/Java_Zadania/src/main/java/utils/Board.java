@@ -35,7 +35,10 @@ public class Board {
         for (int i = 0; i< bombsCount; i++) {
             int x = generator.nextInt(board.length);
             int y = generator.nextInt(board.length);
-            board[x][y].setStatus("o");
+
+            if (!board[x][y].getStatus().equals("o")) {
+                board[x][y].setStatus("o");
+            }
         }
     }
 
