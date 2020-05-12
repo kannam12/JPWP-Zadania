@@ -1,9 +1,15 @@
 package controller;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import utils.Board;
 
-
 public class Zadanie {
+    @FXML
+    BorderPane borderpane;
+
 
     /*
     a) Klasa Board to nasz uproszczony model kwadratowej planszy sapera
@@ -53,8 +59,29 @@ public class Zadanie {
         Board board = new Board(size, 20);
         board.printBoard();
 
-        //tu wpisz swój kod
+        GridPane gridPane = new GridPane();
 
+        for (int i = 0; i < size; i++){
+            for (int j = 0; j < size; j++) {
+                ToggleButton toggleButton = new ToggleButton();
+                int i1 = i;
+                int j1 = j;
 
+                toggleButton.setMinSize(25, 25);
+                toggleButton.setOnMouseClicked(mouseEvent -> {
+
+                    if (board.getBoard()[i1][j1].getStatus().equals("o")) {
+                        System.out.println("Natrafiono na bombę");
+                        toggleButton.setDisable(true);
+                        toggleButton.setStyle("-fx-background-color: red");
+                    } else {
+                        toggleButton.setSelected(false);
+                    }
+                });
+
+                gridPane.add(toggleButton, i, j);
+            }
+        }
+        //tu dodaj gridPane do środka borderPane
     }
 }
