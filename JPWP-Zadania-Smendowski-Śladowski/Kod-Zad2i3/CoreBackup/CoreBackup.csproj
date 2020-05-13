@@ -1,0 +1,135 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageIcon>CoreBackup.png</PackageIcon>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <ApplicationIcon>Assets\CoreBackup.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="**\*.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <AvaloniaResource Include="**\*.xaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Remove="Assets\Icons\icons8-data-encryption-64.png" />
+    <AvaloniaResource Remove="Assets\Icons\icons8-key-160.png" />
+    <AvaloniaResource Remove="Assets\Icons\icons8-key-256.png" />
+    <AvaloniaResource Remove="Assets\Icons\icons8-security-aes-64.png" />
+    <AvaloniaResource Remove="Views\ConfigurationViews\DirectoryConfView.xaml" />
+    <AvaloniaResource Remove="Views\ConfigurationViews\FTPConfView.xaml" />
+    <AvaloniaResource Remove="Views\CryptographyView.xaml" />
+    <AvaloniaResource Remove="Views\EventLogView.xaml" />
+    <AvaloniaResource Remove="Views\FileExplorerView.xaml" />
+    <AvaloniaResource Remove="Views\HomeView.xaml" />
+    <AvaloniaResource Remove="Views\NavbarView.xaml" />
+    <AvaloniaResource Remove="Views\SettingsWindow.xaml" />
+    <AvaloniaResource Remove="Views\StatusBarView.xaml" />
+    <AvaloniaResource Remove="Views\TasksView.xaml" />
+    <AvaloniaResource Remove="Windows\AboutWindow.xaml" />
+    <AvaloniaResource Remove="Windows\SettingsWindow.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\Icons\icons8-data-encryption-64.png" />
+    <None Remove="Assets\Icons\icons8-key-160.png" />
+    <None Remove="Assets\Icons\icons8-key-256.png" />
+    <None Remove="Assets\Icons\icons8-security-aes-64.png" />
+    <None Remove="Views\ConfigurationViews\DirectoryConfView.xaml" />
+    <None Remove="Views\ConfigurationViews\FTPConfView.xaml" />
+    <None Remove="Views\CryptographyView.xaml" />
+    <None Remove="Views\EventLogView.xaml" />
+    <None Remove="Views\FileExplorerView.xaml" />
+    <None Remove="Views\HomeView.xaml" />
+    <None Remove="Views\NavbarView.xaml" />
+    <None Remove="Views\SettingsWindow.xaml" />
+    <None Remove="Views\StatusBarView.xaml" />
+    <None Remove="Views\TasksView.xaml" />
+    <None Remove="Windows\AboutWindow.xaml" />
+    <None Remove="Windows\SettingsWindow.xaml" />
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+    <None Include="Assets\CoreBackup.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="Views\ConfigurationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Include="Views\ContainerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.9.10" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.9.10" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.9.10" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.10" />
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
+    <PackageReference Include="MahApps.Metro" Version="1.6.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="WindowsAPICodePack-Shell" Version="1.1.1" />
+    <PackageReference Include="ReactiveUI" Version="11.4.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EventLogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FileExplorerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\HomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\NavbarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\AboutWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Windows\SettingsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TasksView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ConfigurationViews\FTPConfView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ConfigurationViews\DirectoryConfView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\CryptographyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\StatusBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

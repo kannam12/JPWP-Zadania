@@ -1,0 +1,31 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="CoreBackup.Views.NavbarView">
+  <Menu>
+    <!--Menu Styling -->
+    <Menu.Styles>
+      <Style Selector="MenuItem">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Padding" Value="5"/>
+      </Style>
+    </Menu.Styles>
+    
+    <MenuItem Header="_File">
+      <MenuItem Command="{Binding OpenConfigCommand}" Header="_Open"/>
+      <MenuItem Command="{Binding SaveConfigCommand}" Header="_Save"/>
+      <MenuItem Command="{Binding SaveAsConfigCommand}" Header="_Save As"/>
+      <MenuItem Header="_Change Theme" Command="{Binding ChangeThemeCommand}"/>
+      <!--Preferences open new window // theme // settings -->
+      <Separator/>
+      <MenuItem Header="_Exit" Command="{Binding ExitAppCommand}"/>
+    
+    </MenuItem>
+    <MenuItem Header="_Help">
+      <MenuItem Header="_About CoreBackup" Command="{Binding OpenAboutWindowCommand}"/>
+      <MenuItem Header="_GitHub Page" Command="{Binding OpenGitWebsiteCommand}"/>
+    </MenuItem>
+  </Menu>
+</UserControl>
+

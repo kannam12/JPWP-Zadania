@@ -1,0 +1,120 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CoreBackup.Views.TasksView">
+
+  
+  <Grid RowDefinitions="50,*" ClipToBounds="True">
+    <!--Synchronization buttons-->
+    <Grid Grid.Row="0" ColumnDefinitions="*,*,*,*,*" ClipToBounds="True">
+      <Button Grid.Column="0" Background="Transparent" Command="{Binding SyncToLeftOverride}">
+        <Image Source="avares://CoreBackup/Assets/Icons/arrow_doubleLeft_90_blue.png"></Image>
+      </Button>
+      <Button Grid.Column="1" Background="Transparent" Command="{Binding SyncToLeft}">
+        <Image Source="avares://CoreBackup/Assets/Icons/arrow_left_90_blue.png"></Image>
+      </Button>
+      <Button Grid.Column="2" Background="Transparent" Command="{Binding SyncMirror}">
+        <Image Source="avares://CoreBackup/Assets/Icons/arrow_both_90_blue.png"></Image>
+      </Button>
+      <Button Grid.Column="3" Background="Transparent" Command="{Binding SyncToRight}">
+        <Image Source="avares://CoreBackup/Assets/Icons/arrow_right_90_blue.png"></Image>
+      </Button>
+      <Button Grid.Column="4" Background="Transparent" Command="{Binding SyncToRightOverride}">
+        <Image Source="avares://CoreBackup/Assets/Icons/arrow_doubleRight_90_blue.png"></Image>
+      </Button>
+    </Grid>
+    
+      <Grid ClipToBounds="True" Grid.Row="1">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="10"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Column="0"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      ScrollViewer.VerticalScrollBarVisibility="Disabled">
+          <!-- Dynamic data grid - Left Source-->
+          <DataGrid x:Name="TasksDataGridLeft"
+                    Items="{Binding LeftFiles}"
+                    CanUserReorderColumns="True"
+                    CanUserResizeColumns="True"
+                    IsReadOnly="False"
+                    RenderOptions.BitmapInterpolationMode="LowQuality"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    SelectionMode="Extended">
+          <DataGrid.Columns>
+          <DataGridTemplateColumn MinWidth="20" >
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <CheckBox HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTextColumn Header="Filename"
+                                Binding="{Binding RelativePath}"
+                                Width="Auto"
+                                IsReadOnly="True"/>
+            <DataGridTextColumn Header="Modification Date"
+                                Binding="{Binding ModificationTime}"
+                                Width="Auto"/>
+            <DataGridTextColumn Header="Size"
+                                Binding="{Binding Size}"
+                                Width="Auto" />
+            <DataGridTextColumn Header="Extension"
+                                Binding="{Binding Extension}"
+                                Width="Auto"/>
+            <DataGridTextColumn Header="Path"
+                                Binding="{Binding LocalPath}"
+                                Width="Auto"/>
+          </DataGrid.Columns>
+        </DataGrid>
+        </ScrollViewer>
+        <GridSplitter Grid.Column="1"/>
+        <ScrollViewer Grid.Column="2"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      ScrollViewer.VerticalScrollBarVisibility="Disabled">
+          <!--Dynamic data grid - Right Source-->
+        <DataGrid x:Name="TasksDataGridRight"
+                  Items="{Binding RightFiles}"
+                  CanUserReorderColumns="True"
+                  CanUserResizeColumns="True"
+                  IsReadOnly="False"
+                  RenderOptions.BitmapInterpolationMode="LowQuality"
+                  HorizontalAlignment="Stretch"
+                  SelectionMode="Extended">
+          <DataGrid.Columns>
+          <DataGridTemplateColumn MinWidth="20" >
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <CheckBox HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTextColumn Header="Filename"
+                                Binding="{Binding RelativePath}"
+                                Width="Auto"/>
+            <DataGridTextColumn Header="Modification Date"
+                                Binding="{Binding ModificationTime}"
+                                Width="Auto"/>
+            <DataGridTextColumn Header="Size"
+                                Binding="{Binding Size}"
+                                Width="Auto"/>
+            <DataGridTextColumn Header="Extension"
+                                Binding="{Binding Extension}"
+                                Width="Auto"/>
+            <DataGridTextColumn Header="LocalPath"
+                                Binding="{Binding LocalPath}"
+                                Width="Auto"/>
+          </DataGrid.Columns>
+        </DataGrid>
+        </ScrollViewer>
+      </Grid>
+  </Grid>
+</UserControl>

@@ -1,0 +1,16 @@
+ public NavbarViewModel()
+    {
+      this.OpenSettingsWindowCommand = ReactiveCommand.Create(new Action(this.OpenSettingsWindow), (IObservable<bool>) null, (IScheduler) null);
+      this.OpenAboutWindowCommand = ReactiveCommand.Create(new Action(this.OpenAboutWindow), (IObservable<bool>) null, (IScheduler) null);
+      this.ExitAppCommand = ReactiveCommand.Create(new Action(this.ExitApp), (IObservable<bool>) null, (IScheduler) null);
+      this.OpenGitWebsiteCommand = ReactiveCommand.Create(new Action(this.OpenGitWebsite), (IObservable<bool>) null, (IScheduler) null);
+      this.SaveAsConfigCommand = ReactiveCommand.Create(new Action(this.SaveAs), (IObservable<bool>) null, (IScheduler) null);
+      this.SaveConfigCommand = ReactiveCommand.Create(new Action(this.Save), (IObservable<bool>) null, (IScheduler) null);
+      this.OpenConfigCommand = ReactiveCommand.Create(new Action(this.Open), (IObservable<bool>) null, (IScheduler) null);
+      this.ChangeThemeCommand = ReactiveCommand.Create(new Action(this.ChangeTheme), (IObservable<bool>) null, (IScheduler) null);
+      int num = 0;
+      string str = "brumBrum";
+      for (int index = 0; index < 10; ++index)
+        Console.WriteLine(num);
+      Console.WriteLine(str + " appended");
+    }
