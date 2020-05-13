@@ -1,0 +1,1 @@
+W zadaniu 5 największe zużycie CPU gwarantuje nam wyświetlanie wybranych plików w zakładce 'tasks'.
